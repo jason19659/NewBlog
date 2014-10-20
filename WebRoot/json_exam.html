@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="style/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	var url= "interface/article";
+	var d = null;
+	$.getJSON(url, function(data) {
+		d = data;
+		console.info(data);
+		alert(data.obj[1].context);
+		$("<b>Hello World!</b>").appendTo("p");
+		var i;
+		for (var i=0;i<data.obj.length;i++){
+			$("<b>"+data.obj[i].context+"</b> \&nbsp\&nbsp\&nbsp\&nbsp)").appendTo("p");
+		}
+	});
+</script>
+</head>
+<body>
+....<p>123</p>
+</body>
+</html>
